@@ -1,0 +1,143 @@
+/* Mesma paleta do app (lib/ui/design/cores.dart): papel, sálvia e terracota. */
+@font-face { font-family: "Fraunces"; src: url("fontes/Fraunces-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Nunito Sans"; src: url("fontes/NunitoSans-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Nunito Sans"; src: url("fontes/NunitoSans-700.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  color-scheme: light;
+  --fundo: #FBF7F0;
+  --superficie: #FFFDF9;
+  --borda: #E9E1D7;
+  --texto: #393832;
+  --suave: #6B6860;
+  --acao: #455C49;
+  --salvia-lavagem: #E6ECE1;
+  --salvia-tinta: #3F5643;
+  --terracota: #C77F68;
+  --terracota-lavagem: #F6E4DC;
+  --terracota-tinta: #8A4632;
+  --lavanda-lavagem: #EDE9F2;
+  --lavanda-tinta: #54486B;
+  --manteiga-lavagem: #F8EFD2;
+  --manteiga-tinta: #66511A;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --fundo: #1C1B18;
+    --superficie: #26241F;
+    --borda: #3B3831;
+    --texto: #EEE9DF;
+    --suave: #B7B0A4;
+    --acao: #B5CDB0;
+    --salvia-lavagem: #2B3329;
+    --salvia-tinta: #C9D9C2;
+    --terracota: #B9735E;
+    --terracota-lavagem: #3A2923;
+    --terracota-tinta: #F1C4B4;
+    --lavanda-lavagem: #2E2B35;
+    --lavanda-tinta: #D9D1E8;
+    --manteiga-lavagem: #353020;
+    --manteiga-tinta: #EEDB9A;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 400 18px/1.65 "Nunito Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--acao); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
+
+.pagina { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.estreita { max-width: 680px; }
+
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; }
+.marca { display: flex; align-items: center; gap: 10px; color: var(--texto); text-decoration: none; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 22px; }
+.marca img { width: 36px; height: 36px; }
+.topo nav { display: flex; gap: 20px; white-space: nowrap; }
+.topo nav a { font-weight: 700; font-size: 16px; text-decoration: none; }
+
+.abertura { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; padding: 40px 0 72px; }
+.abertura h1 { font-size: clamp(38px, 6vw, 60px); margin: 0 0 20px; }
+.lead { font-size: 21px; color: var(--suave); margin: 0 0 28px; max-width: 36ch; }
+.sobretitulo { margin: 0 0 10px; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracota-tinta); }
+.selo { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; background: var(--acao); color: var(--fundo); font-weight: 700; text-decoration: none; }
+.selo:hover { filter: brightness(1.08); text-decoration: none; }
+.selo-grande { padding: 16px 28px; font-size: 19px; }
+.topo nav a.selo-pequeno { padding: 8px 18px; font-size: 15px; color: var(--fundo); }
+.garantias { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--suave); font-size: 15px; font-weight: 700; }
+.garantias li::before { content: "✓ "; color: var(--acao); }
+
+/* Telas do app numa moldura de celular */
+.celular { margin: 0; justify-self: center; width: min(300px, 100%); border-radius: 40px; padding: 10px; background: #1F1E1B; box-shadow: 0 24px 48px -24px rgba(57, 56, 50, 0.45); }
+.celular img { display: block; width: 100%; height: auto; border-radius: 30px; }
+
+.destaque { display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; padding: 56px 0; border-top: 1px solid var(--borda); }
+.destaque.invertido figure { order: 2; }
+.destaque h2 { font-size: clamp(28px, 4vw, 38px); margin: 0 0 18px; }
+.beneficios { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.beneficios li { position: relative; padding-left: 30px; }
+.beneficios li::before { content: ""; position: absolute; left: 4px; top: 0.55em; width: 12px; height: 12px; border-radius: 50%; background: var(--terracota); }
+
+.chamada-final { text-align: center; padding: 24px 0 64px; }
+.chamada-final h2 { font-size: clamp(28px, 4.5vw, 40px); margin: 16px auto 24px; max-width: 18ch; }
+
+.recursos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 56px 0; border-top: 1px solid var(--borda); }
+.cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 20px; padding: 24px; }
+.cartao h3 { font-size: 21px; margin: 12px 0 8px; }
+.cartao p { margin: 0; color: var(--suave); font-size: 17px; }
+.mancha { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; }
+.mancha svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.t-terracota { background: var(--terracota-lavagem); color: var(--terracota-tinta); }
+.t-salvia { background: var(--salvia-lavagem); color: var(--salvia-tinta); }
+.t-lavanda { background: var(--lavanda-lavagem); color: var(--lavanda-tinta); }
+.t-manteiga { background: var(--manteiga-lavagem); color: var(--manteiga-tinta); }
+
+.faixa { background: var(--salvia-lavagem); color: var(--salvia-tinta); border-radius: 24px; padding: 32px; margin-bottom: 56px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; }
+.faixa h2 { margin: 0 0 8px; font-size: 26px; }
+.faixa p { margin: 0; }
+.faixa a { color: inherit; font-weight: 700; }
+
+.rodape { border-top: 1px solid var(--borda); padding: 28px 0 40px; color: var(--suave); font-size: 16px; }
+.rodape p { margin: 4px 0; }
+
+/* Política de privacidade */
+.politica h1 { font-size: clamp(30px, 5vw, 40px); margin: 24px 0 4px; }
+.politica h2 { font-size: 23px; margin: 36px 0 8px; color: var(--acao); }
+.politica p, .politica li { margin: 8px 0; }
+.politica ul { padding-left: 22px; }
+.politica .data { color: var(--suave); font-size: 16px; margin: 0; }
+
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  .abertura { grid-template-columns: 1fr; gap: 40px; padding: 16px 0 48px; }
+  .lead { font-size: 19px; }
+  .destaque { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+  .destaque figure, .destaque.invertido figure { order: 2; }
+  .celular { width: min(270px, 80%); }
+  .recursos { grid-template-columns: 1fr; }
+  .faixa { grid-template-columns: 1fr; padding: 24px; }
+}
+
+/* Baixar */
+.convite h1 { font-size: clamp(32px, 5.5vw, 44px); margin: 24px 0 12px; }
+.convite p { font-size: 19px; color: var(--suave); margin: 0 0 32px; }
+.passos { list-style: none; margin: 0 0 40px; padding: 0; display: grid; gap: 16px; }
+.passos .cartao { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; }
+.passos h2 { font-size: 22px; margin: 6px 0 8px; }
+.passos p { margin: 0 0 18px; color: var(--suave); font-size: 17px; }
+.passos strong { color: var(--texto); }
+.numero { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 22px; }
+.duvidas { margin-bottom: 48px; }
+.duvidas h2 { font-size: 26px; margin: 0 0 8px; }
+.duvidas h3 { font-family: "Nunito Sans", system-ui, sans-serif; font-weight: 700; font-size: 18px; margin: 24px 0 4px; }
+.duvidas p { margin: 0; color: var(--suave); }
+@media (max-width: 760px) {
+  .passos .cartao { grid-template-columns: 1fr; gap: 8px; }
+}
