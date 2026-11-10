@@ -89,6 +89,11 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-hei
 .chamada-final h2 { font-size: clamp(28px, 4.5vw, 40px); margin: 16px auto 24px; max-width: 18ch; }
 
 .recursos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 56px 0; border-top: 1px solid var(--borda); }
+.chamada-recursos { text-align: center; padding: 56px 0 8px; border-top: 1px solid var(--borda); }
+.chamada-recursos h2 { max-width: 20em; margin: 0 auto 28px; }
+.numeros { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.numeros li { background: var(--superficie); border: 1px solid var(--borda); border-radius: 16px; padding: 16px 8px; color: var(--suave); font-size: 15px; }
+.numeros strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 30px; color: var(--texto, inherit); }
 .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 20px; padding: 24px; }
 .cartao h3 { font-size: 21px; margin: 12px 0 8px; }
 .cartao p { margin: 0; color: var(--suave); font-size: 17px; }
@@ -122,6 +127,7 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-hei
   .destaque figure, .destaque.invertido figure { order: 2; }
   .celular { width: min(270px, 80%); }
   .recursos { grid-template-columns: 1fr; }
+  .numeros { grid-template-columns: repeat(2, 1fr); }
   .faixa { grid-template-columns: 1fr; padding: 24px; }
 }
 
@@ -141,3 +147,4 @@ h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-hei
 @media (max-width: 760px) {
   .passos .cartao { grid-template-columns: 1fr; gap: 8px; }
 }
+.chamada-recursos + .recursos { border-top: 0; padding-top: 32px; }
